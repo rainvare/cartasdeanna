@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Cartas de Anna · Correspondencia para los más pequeños</title>
-  <!-- Fuentes: Manuscrita amable + Sans-serif limpia -->
+  <title>Cartas de Anna · Correspondencia para pequeños exploradores</title>
+  <!-- Fuentes: Manuscrita amable + Sans-serif limpia con variantes de peso -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome para iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome para iconos (usaremos como base, luego estilizamos como stickers) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -19,60 +19,128 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #fefaf5;  /* crema cálido */
+      background-color: #fcf8f2;  /* fondo base con pattern sutil */
       color: #3a2c2b;
       line-height: 1.6;
+      letter-spacing: 0.02em;
+      background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M15 10 L20 15 L15 20 L10 15 L15 10Z" fill="%23e0c9c0" opacity="0.08"/><circle cx="40" cy="40" r="4" fill="%23d9b2a5" opacity="0.08"/></svg>');
+      background-size: 80px 80px;
     }
 
     h1, h2, h3 {
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: -0.01em;
     }
 
     h1 {
       font-family: 'Caveat', cursive;
-      font-size: 3.2rem;
-      font-weight: 600;
+      font-size: 3.8rem;
+      font-weight: 700;
       color: #7f4f4a;
       line-height: 1.2;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     h2 {
       font-family: 'Caveat', cursive;
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #7f4f4a;
-      margin-bottom: 1.2rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #6b4943;
+      margin-bottom: 1.8rem;
       position: relative;
       display: inline-block;
+      letter-spacing: 0.5px;
     }
 
     h2:after {
       content: "🐈";
-      font-size: 1.8rem;
-      margin-left: 8px;
-      opacity: 0.7;
+      font-size: 2rem;
+      margin-left: 10px;
+      opacity: 0.8;
     }
 
     h3 {
       font-family: 'Caveat', cursive;
-      font-size: 1.9rem;
+      font-size: 2.2rem;
+      font-weight: 600;
       color: #8b5e5a;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
     }
 
-    /* Header / Hero */
+    /* Secciones con bordes orgánicos tipo "torn paper" */
+    section {
+      padding: 70px 0;
+      position: relative;
+      background-color: transparent; /* la mayoría hereda del body o clase */
+    }
+
+    .bg-soft {
+      background-color: #f7efe9;
+    }
+
+    .bg-warm {
+      background-color: #f3e5ab; /* amarillo suave */
+    }
+
+    .bg-lightblue {
+      background-color: #d9e3e0; /* azul apagado */
+    }
+
+    /* Efecto de borde rasgado entre secciones */
+    .torn-edge {
+      position: relative;
+    }
+    .torn-edge::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 25px;
+      background-size: 40px 25px;
+      background-repeat: repeat-x;
+      background-image: radial-gradient(circle at 20px 25px, currentColor 20px, transparent 21px);
+      color: inherit;
+    }
+
+    /* Aplicamos bordes ondulados en algunas secciones clave */
+    .section-torn-top {
+      position: relative;
+      padding-top: 80px;
+    }
+    .section-torn-top::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 25px;
+      background: radial-gradient(circle at 20px 25px, #fcf8f2 20px, transparent 21px);
+      background-size: 40px 25px;
+    }
+
+    /* Hero */
     .hero {
-      padding: 60px 0 40px;
-      background: linear-gradient(135deg, #f9ede4 0%, #fefaf5 100%);
-      border-bottom: 2px dashed #e0c9c0;
+      padding: 60px 0 60px;
+      background: linear-gradient(135deg, #f9ede4 0%, #fcf8f2 100%);
+      border-bottom: none;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      width: 100%;
+      height: 25px;
+      background: radial-gradient(circle at 20px 0, #fcf8f2 20px, transparent 21px);
+      background-size: 40px 25px;
     }
 
     .hero-grid {
@@ -99,6 +167,7 @@
       padding: 30px 20px 20px;
       box-shadow: 0 15px 25px rgba(120, 70, 60, 0.1);
       border: 3px solid #fff;
+      transform: rotate(-2deg);
     }
 
     .hero-image i {
@@ -109,17 +178,18 @@
 
     .hero-image p {
       font-family: 'Caveat', cursive;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: #5e3f3b;
     }
 
     .subtitle {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 400;
       margin: 20px 0 28px;
       color: #4e3b37;
-      border-left: 5px solid #c9a79c;
+      border-left: 6px solid #c9a79c;
       padding-left: 20px;
+      letter-spacing: 0.3px;
     }
 
     .btn {
@@ -128,18 +198,18 @@
       color: white;
       font-weight: 600;
       font-size: 1.2rem;
-      padding: 14px 32px;
+      padding: 16px 36px;
       border-radius: 60px;
       text-decoration: none;
       box-shadow: 0 8px 16px rgba(150, 90, 70, 0.15);
       transition: all 0.2s ease;
       border: 2px solid #f1ddd6;
       font-family: 'Quicksand', sans-serif;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.5px;
     }
 
     .btn i {
-      margin-right: 8px;
+      margin-right: 10px;
     }
 
     .btn:hover {
@@ -148,15 +218,7 @@
       box-shadow: 0 12px 20px rgba(150, 90, 70, 0.2);
     }
 
-    /* Secciones generales */
-    section {
-      padding: 70px 0;
-    }
-
-    .bg-soft {
-      background-color: #f7efe9;
-    }
-
+    /* Tarjetas estilo "scrapbook" */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -167,28 +229,43 @@
     .card {
       background: white;
       padding: 30px 24px;
-      border-radius: 40px 20px 40px 20px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+      border-radius: 30px 15px 30px 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.02);
       border: 1px solid #f0dfd7;
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
+      transform: rotate(0deg);
+    }
+
+    /* Algunas tarjetas con rotación suave */
+    .card:nth-child(odd) {
+      transform: rotate(-0.8deg);
+    }
+    .card:nth-child(even) {
+      transform: rotate(1deg);
     }
 
     .card:hover {
-      transform: scale(1.01);
+      transform: scale(1.02) rotate(0deg);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.08);
       border-color: #dbb9ae;
     }
 
     .card i {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       color: #b07d70;
       margin-bottom: 20px;
+      background: #f7efe9;
+      padding: 10px;
+      border-radius: 18px;
+      display: inline-block;
     }
 
     .card h4 {
       font-family: 'Caveat', cursive;
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 12px;
       color: #6b4943;
+      font-weight: 600;
     }
 
     /* Pasos */
@@ -202,17 +279,26 @@
 
     .step {
       background: white;
-      border-radius: 50px 20px 50px 20px;
-      padding: 25px 20px;
+      border-radius: 60px 20px 60px 20px;
+      padding: 30px 25px;
       flex: 1 1 160px;
       text-align: center;
       border-bottom: 5px solid #d9b2a5;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.03);
+      transform: rotate(-0.5deg);
+      transition: transform 0.2s;
+    }
+    .step:nth-child(even) {
+      transform: rotate(1deg);
+    }
+    .step:hover {
+      transform: rotate(0deg) scale(1.02);
     }
 
     .step-number {
       font-family: 'Caveat', cursive;
-      font-size: 2.8rem;
-      font-weight: 600;
+      font-size: 3rem;
+      font-weight: 700;
       color: #c27a70;
       line-height: 1;
     }
@@ -221,49 +307,58 @@
     .quote-block {
       background: #fff5ef;
       padding: 40px 30px;
-      border-radius: 60px 20px 60px 20px;
+      border-radius: 70px 20px 70px 20px;
       margin: 40px 0;
       font-family: 'Caveat', cursive;
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: #4d3530;
-      box-shadow: inset 0 0 0 2px #fbe9e1, 0 10px 15px -5px rgba(0,0,0,0.05);
-      border-left: 8px solid #c27a70;
-    }
-
-    .quote-block i {
-      color: #a17267;
-      margin-right: 8px;
+      box-shadow: inset 0 0 0 2px #fbe9e1, 0 15px 25px -8px rgba(0,0,0,0.1);
+      border-left: 10px solid #c27a70;
+      transform: rotate(-0.3deg);
     }
 
     /* Planes */
     .planes-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 25px;
+      gap: 30px;
       justify-content: center;
       margin-top: 30px;
     }
 
     .plan {
       background: white;
-      padding: 30px 25px;
-      border-radius: 40px 20px 40px 20px;
+      padding: 35px 30px;
+      border-radius: 50px 20px 50px 20px;
       flex: 1 1 250px;
       max-width: 300px;
-      box-shadow: 0 8px 20px rgba(150, 100, 80, 0.05);
+      box-shadow: 0 12px 24px rgba(150, 100, 80, 0.06);
       border: 1px solid #edd9cf;
       text-align: center;
+      transform: rotate(-0.7deg);
+      transition: all 0.2s;
+    }
+    .plan:nth-child(2) {
+      transform: rotate(0.8deg);
+    }
+    .plan:nth-child(3) {
+      transform: rotate(-0.4deg);
+    }
+    .plan:hover {
+      transform: rotate(0deg) scale(1.02);
+      border-color: #c9a79c;
     }
 
     .plan h4 {
       font-family: 'Caveat', cursive;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: #6e4a42;
+      font-weight: 700;
     }
 
     .plan .price {
-      font-size: 1.8rem;
-      font-weight: 600;
+      font-size: 2rem;
+      font-weight: 700;
       color: #8b5e56;
       margin: 15px 0;
     }
@@ -271,53 +366,90 @@
     .plan .btn-small {
       background: #c27a70;
       color: white;
-      padding: 10px 22px;
+      padding: 12px 28px;
       border-radius: 40px;
       text-decoration: none;
       display: inline-block;
       margin-top: 15px;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      border: 1px solid #eecfc6;
     }
 
     /* FAQ */
     .faq-item {
       background: white;
       margin-bottom: 16px;
-      padding: 20px 25px;
-      border-radius: 30px 10px 30px 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+      padding: 24px 30px;
+      border-radius: 40px 15px 40px 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.02);
       border: 1px solid #ecdcd3;
+      transform: rotate(-0.2deg);
     }
 
     .faq-question {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1.2rem;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
       color: #5b3e39;
+      letter-spacing: 0.2px;
     }
 
     .faq-question i {
       color: #b17b6e;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      background: #f9ede4;
+      padding: 8px;
+      border-radius: 15px;
     }
 
     /* Testimonios */
     .testimonio {
       background: white;
-      padding: 25px;
-      border-radius: 30px 10px 30px 10px;
+      padding: 30px 25px;
+      border-radius: 40px 15px 40px 15px;
       font-style: italic;
-      border-bottom: 4px solid #e4c6bb;
+      border-bottom: 5px solid #e4c6bb;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.03);
+      transform: rotate(0.5deg);
+    }
+    .testimonio:nth-child(2) {
+      transform: rotate(-0.8deg);
+    }
+    .testimonio:nth-child(3) {
+      transform: rotate(1deg);
+    }
+
+    /* Sección suscripción paso a paso */
+    .suscripcion-paso {
+      background: #fff8f3;
+      border-radius: 60px 20px 60px 20px;
+      padding: 45px 40px;
+      border: 2px solid #f1dbd2;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+      transform: rotate(-0.2deg);
     }
 
     /* Footer */
     footer {
       background: #e7d7cf;
-      padding: 40px 0 25px;
+      padding: 50px 0 30px;
       color: #3b2c28;
       border-top: 2px dashed #bb9b90;
+      position: relative;
+    }
+    footer::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 25px;
+      background: radial-gradient(circle at 20px 25px, #e7d7cf 20px, transparent 21px);
+      background-size: 40px 25px;
     }
 
     .footer-links {
@@ -325,17 +457,14 @@
       gap: 30px;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 20px 0;
+      margin: 25px 0;
     }
 
     .footer-links a {
       color: #4d3530;
       text-decoration: none;
-      font-weight: 500;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
+      font-weight: 600;
+      font-size: 1rem;
     }
 
     .handwrite {
@@ -346,13 +475,22 @@
       text-align: center;
     }
 
-    /* Responsive */
+    /* Iconos tipo sticker */
+    .sticker-icon {
+      background: #fefaf5;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      padding: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+      border: 1px solid #e8d0c4;
+    }
+
+    /* Ajustes responsive */
     @media (max-width: 700px) {
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
       }
       h2 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
       .hero-grid {
         flex-direction: column-reverse;
@@ -361,6 +499,14 @@
         max-width: 280px;
         margin: 0 auto;
       }
+      .container {
+        padding: 0 20px;
+      }
+    }
+
+    /* Enlace a formulario real */
+    .btn-form {
+      cursor: pointer;
     }
   </style>
 </head>
@@ -375,16 +521,16 @@
         Con preguntas que despiertan el mundo.<br>
         Y un gato que duerme sobre el cuaderno.
       </div>
-      <p style="font-size:1.2rem; margin-bottom: 30px; max-width: 550px;">
+      <p style="font-size:1.2rem; margin-bottom: 30px; max-width: 550px; letter-spacing: 0.3px;">
         Cada mes, tu hijo o hija recibe una carta escrita a mano por Anna, una nena de 6 años que está aprendiendo a leer. No enseña, no corrige. Solo comparte lo que descubre y pregunta lo que siente. Y espera respuesta.
       </p>
-      <a href="#planes" class="btn"><i class="fas fa-envelope-open-text"></i> Quiero conocer a Anna →</a>
+      <a href="https://forms.gle/i76VseEv1h9uJzre7" target="_blank" class="btn"><i class="fas fa-envelope-open-text"></i> Quiero conocer a Anna →</a>
     </div>
     <div class="hero-image">
       <div class="placeholder-illustration">
-        <i class="fas fa-cat"></i>
-        <i class="fas fa-feather-alt" style="font-size:2.5rem; margin:0 8px;"></i>
-        <i class="fas fa-leaf"></i>
+        <i class="fas fa-cat sticker-icon"></i>
+        <i class="fas fa-feather-alt" style="font-size:2.5rem; margin:0 8px; color:#9b7b72;"></i>
+        <i class="fas fa-leaf sticker-icon"></i>
         <p>Anna, 6 años<br>Palermo, Bs. As.</p>
         <div style="font-size:1rem; margin-top:5px;">✉️ Fideo duerme en el cuaderno</div>
       </div>
@@ -393,13 +539,13 @@
 </div>
 
 <!-- ¿Qué es Cartas de Anna? -->
-<section>
+<section class="bg-soft section-torn-top">
   <div class="container">
     <h2>¿Qué es Cartas de Anna?</h2>
     <div style="display: flex; gap: 30px; flex-wrap: wrap;">
       <div style="flex:2; min-width: 260px;">
-        <p style="font-size:1.2rem; margin-bottom: 20px;">Cartas de Anna es un envío postal mensual para niños y niñas de 4 a 8 años. No es un libro, no es una app, no es una tarea escolar. <strong>Es una amistad por carta.</strong></p>
-        <p>Cada mes llega un sobre con una carta manuscrita de Anna. Adentro hay preguntas, descubrimientos diminutos y una invitación a responder. Porque Anna cree que las palabras escritas viajan.</p>
+        <p style="font-size:1.2rem; margin-bottom: 20px; letter-spacing: 0.3px;">Cartas de Anna es un envío postal mensual para niños y niñas de 4 a 8 años. No es un libro, no es una app, no es una tarea escolar. <strong>Es una amistad por carta.</strong></p>
+        <p style="letter-spacing: 0.2px;">Cada mes llega un sobre con una carta manuscrita de Anna. Adentro hay preguntas, descubrimientos diminutos y una invitación a responder. Porque Anna cree que las palabras escritas viajan.</p>
         <ul style="margin-top: 25px; list-style: none;">
           <li style="margin-bottom: 12px;"><i class="fas fa-pencil-alt" style="color:#b07d70; width: 24px;"></i> Carta manuscrita (impresa con letra realista)</li>
           <li style="margin-bottom: 12px;"><i class="fas fa-seedling" style="color:#b07d70;"></i> Un detalle del mundo de Anna (flor seca, dibujo)</li>
@@ -407,16 +553,16 @@
           <li style="margin-bottom: 12px;"><i class="fas fa-user-check" style="color:#b07d70;"></i> Sobre personalizado con el nombre</li>
         </ul>
       </div>
-      <div style="flex:1; background: #f9ede4; border-radius: 50px 20px; padding: 30px 20px; text-align: center;">
-        <i class="fas fa-mail-bulk" style="font-size:3.5rem; color:#b07d70;"></i>
-        <p style="font-family:'Caveat', cursive; font-size:1.8rem; margin-top: 15px;">"Una carta con tu nombre esperándote en el buzón"</p>
+      <div style="flex:1; background: #f9ede4; border-radius: 50px 20px; padding: 30px 20px; text-align: center; box-shadow: 0 8px 12px rgba(0,0,0,0.02); transform: rotate(0.5deg);">
+        <i class="fas fa-mail-bulk sticker-icon" style="font-size:3.5rem; color:#b07d70;"></i>
+        <p style="font-family:'Caveat', cursive; font-size:2rem; margin-top: 15px;">"Una carta con tu nombre esperándote en el buzón"</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ¿Cómo funciona? -->
-<section class="bg-soft">
+<section class="bg-warm torn-edge">
   <div class="container">
     <h2>¿Cómo funciona?</h2>
     <div class="steps">
@@ -426,46 +572,93 @@
       <div class="step"><span class="step-number">4</span> <h4>Tu pequeño lee</h4> (o le leen) y puede responder con dibujos.</div>
       <div class="step"><span class="step-number">5</span> <h4>Al mes siguiente</h4> llega otra carta, y la amistad crece.</div>
     </div>
-    <p class="text-center" style="font-size:0.95rem;"><i class="far fa-heart"></i> Las respuestas nutren las futuras cartas. Anna siempre siente que la leen de verdad.</p>
+    <p class="text-center" style="font-size:1rem;"><i class="far fa-heart"></i> Las respuestas nutren las futuras cartas. Anna siempre siente que la leen de verdad.</p>
+  </div>
+</section>
+
+<!-- 🆕 SECCIÓN: Cómo suscribirse (con formulario real) -->
+<section class="bg-lightblue">
+  <div class="container">
+    <h2>Cómo suscribirse (paso a paso)</h2>
+    <div class="suscripcion-paso">
+      <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+        <div style="flex: 2; min-width: 260px;">
+          <div style="margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+              <span style="background: #c27a70; color: white; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold;">1</span>
+              <h4 style="margin: 0; font-size: 2rem;">Completá el formulario</h4>
+            </div>
+            <p style="margin-left: 55px;">Hacé clic en el botón de abajo. Te llevará a un formulario donde nos contarás el nombre del niño/a, dirección de envío, plan elegido y algún detalle especial.</p>
+          </div>
+          <div style="margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+              <span style="background: #c27a70; color: white; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold;">2</span>
+              <h4 style="margin: 0; font-size: 2rem;">Pagá con MercadoPago</h4>
+            </div>
+            <p style="margin-left: 55px;">Al finalizar el formulario, te redirigiremos al link de pago seguro de MercadoPago. Podés pagar con tarjeta, transferencia o dinero en cuenta.</p>
+          </div>
+          <div style="margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+              <span style="background: #c27a70; color: white; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold;">3</span>
+              <h4 style="margin: 0; font-size: 2rem;">Recibí la confirmación</h4>
+            </div>
+            <p style="margin-left: 55px;">Te llegará un mail de bienvenida con la fecha de envío. ¡Y después a esperar al cartero!</p>
+          </div>
+          <div style="margin-top: 30px; margin-left: 55px;">
+            <a href="https://forms.gle/i76VseEv1h9uJzre7" target="_blank" class="btn" style="padding: 14px 32px;"><i class="fas fa-pen-fancy"></i> Ir al formulario de suscripción</a>
+            <p style="margin-top: 15px; font-size: 0.9rem;"><i class="fas fa-lock"></i> Tus datos están seguros. El pago se realiza a través de MercadoPago.</p>
+          </div>
+        </div>
+        <div style="flex: 1.2; background: #f9ede4; border-radius: 50px 20px; padding: 30px 25px; text-align: center; box-shadow: inset 0 0 0 2px #fbe9e1; transform: rotate(0.8deg);">
+          <i class="fas fa-credit-card sticker-icon" style="font-size: 3.5rem; color: #7f4f4a;"></i>
+          <p style="font-family: 'Caveat', cursive; font-size: 2rem; margin: 15px 0;">¡Es muy fácil!</p>
+          <p style="letter-spacing: 0.3px;">Formulario → Confirmación de suscripción → Carta en camino.</p>
+          <div style="background: white; border-radius: 20px; padding: 20px; margin-top: 25px; font-size: 0.95rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+            <i class="fas fa-shield-alt"></i> Pago 100% seguro.<br>
+            <i class="fas fa-truck"></i> Envíos a toda Argentina por correo.
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ¿Por qué Cartas de Anna? -->
-<section>
+<section class="bg-soft">
   <div class="container">
     <h2>¿Por qué Cartas de Anna?</h2>
     <div class="card-grid">
-      <div class="card"><i class="fas fa-child"></i><h4>Para los chicos</h4> Recibir una carta con su nombre es mágico. Leer se vuelve un momento compartido, sin pantallas.</div>
-      <div class="card"><i class="fas fa-users"></i><h4>Para las familias</h4> Un puente para hablar de emociones, miedos y descubrimientos. Un ritual mensual que se espera con ilusión.</div>
-      <div class="card"><i class="fas fa-star"></i><h4>Lectura con sentido</h4> Anna no corrige: pregunta y se maravilla. Los niños se sienten vistos.</div>
+      <div class="card"><i class="fas fa-child sticker-icon"></i><h4>Para los chicos</h4> Recibir una carta con su nombre es mágico. Leer se vuelve un momento compartido, sin pantallas.</div>
+      <div class="card"><i class="fas fa-users sticker-icon"></i><h4>Para las familias</h4> Un puente para hablar de emociones, miedos y descubrimientos. Un ritual mensual que se espera con ilusión.</div>
+      <div class="card"><i class="fas fa-star sticker-icon"></i><h4>Lectura con sentido</h4> Anna no corrige: pregunta y se maravilla. Los niños se sienten vistos.</div>
     </div>
   </div>
 </section>
 
 <!-- Fragmento de ejemplo -->
-<section class="bg-soft">
+<section class="bg-warm">
   <div class="container">
     <h2>Una probadita de la voz de Anna</h2>
     <div class="quote-block">
       <i class="fas fa-quote-left"></i> 
-      Son las cuatro de la tarde y hay un olor a lluvia que todavía no llegó. Fideo está en la ventana mirando el cielo como si supiera algo que yo no sé. La abuela Beatriz dice que los gatos sienten la lluvia antes que los humanos. Yo lo creo. Vos, ¿le creés a los gatos?
+      Son las cuatro de la tarde y hay un olor a lluvia que todavía no llegó. Mi gato Fideo está en la ventana mirando el cielo como si supiera algo que yo no sé. La abuela Beatriz dice que los gatos sienten la lluvia antes que los humanos. Yo lo creo. Vos, ¿le creés a los gatos?
       <i class="fas fa-quote-right"></i>
     </div>
-    <p class="text-center" style="font-family:'Caveat', cursive; font-size:1.4rem;">— Anna 🐈</p>
+    <p class="text-center" style="font-family:'Caveat', cursive; font-size:1.8rem;">— Anna 🐈</p>
   </div>
 </section>
 
 <!-- Conocé a Anna -->
-<section>
-  <div class="container" style="max-width: 900px;">
+<section class="bg-lightblue">
+  <div class="container" style="max-width: 1000px;">
     <h2>Conocé a Anna (sin spoilers)</h2>
-    <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
-      <div style="flex:1; min-width:200px;">
-        <i class="fas fa-girl" style="font-size:4rem; color:#b07d70;"></i>
-        <i class="fas fa-cat" style="font-size:3rem; color:#b07d70; margin-left:15px;"></i>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; align-items: center;">
+      <div style="flex:1; min-width:200px; text-align: center;">
+        <i class="fas fa-girl sticker-icon" style="font-size:4.5rem; color:#b07d70;"></i>
+        <i class="fas fa-cat sticker-icon" style="font-size:3.5rem; color:#b07d70; margin-left:15px;"></i>
       </div>
       <div style="flex:3;">
-        <p>Anna tiene 6 años, el pelo castaño siempre revuelto y ojos que ven lo que otros no miraron. Vive en Palermo con su abuela Beatriz y su gato Fideo. Está aprendiendo a leer y escribir, y cada letra nueva es una llave. No es maestra, no da consejos. Es una compañera de aventuras que pregunta y abraza con palabras.</p>
+        <p style="font-size:1.2rem;">Anna tiene 6 años, el pelo castaño siempre revuelto y ojos que ven lo que otros no miraron. Vive en Argentina con su abuela Beatriz y su gato Fideo. Está aprendiendo a leer y escribir, y cada letra nueva es una llave. No es maestra, no da consejos. Es una compañera de aventuras que pregunta y abraza con palabras.</p>
       </div>
     </div>
   </div>
@@ -479,54 +672,52 @@
       <div class="plan">
         <h4>Mensual</h4>
         <p>1 carta por mes</p>
-        <div class="price">$XXXX</div>
+        <div class="price">$14.990</div>
         <p>Renovable · envío incluido</p>
-        <a href="#" class="btn-small">Suscribirme →</a>
+        <a href="https://forms.gle/i76VseEv1h9uJzre7" target="_blank" class="btn-small">Suscribirme →</a>
       </div>
-      <div class="plan">
-        <h4>Trimestral</h4>
-        <p>3 cartas (una por mes)</p>
-        <div class="price">$XXXX</div>
-        <p>Pago único</p>
-        <a href="#" class="btn-small">Elegir trimestre →</a>
-      </div>
+  
       <div class="plan">
         <h4>Anual</h4>
         <p>12 cartas + regalo sorpresa</p>
-        <div class="price">$XXXX</div>
-        <p>Pago único · mejor valor</p>
-        <a href="#" class="btn-small">Regalar un año →</a>
+        <div class="price">$143.900</div>
+        <p>Pago único · 20% de descuento </p>
+        <a href="https://forms.gle/i76VseEv1h9uJzre7" target="_blank" class="btn-small">Regalar un año →</a>
       </div>
     </div>
-    <p class="text-center" style="margin-top:25px;">✉️ Envío incluido a todo el país. Las cartas salen los primeros días del mes.</p>
+    <p class="text-center" style="margin-top:30px;">✉️ Envío incluido a todo el país. Las cartas salen los primeros días del mes.</p>
   </div>
 </section>
 
 <!-- FAQ -->
-<section>
+<section class="bg-warm">
   <div class="container">
     <h2>Preguntas que quizás tengas</h2>
     <div class="faq-item">
       <div class="faq-question"><i class="far fa-calendar-alt"></i> ¿A partir de qué edad se recomienda?</div>
-      <p>Ideal para 4 a 8 años. Si aún no leen solos, se lee en familia. Si ya leen, es una práctica emocionante.</p>
+      <p style="margin-top: 10px;">Ideal para 4 a 8 años. Si aún no leen solos, se lee en familia. Si ya leen, es una práctica emocionante.</p>
     </div>
     <div class="faq-item">
       <div class="faq-question"><i class="far fa-copy"></i> ¿Las cartas son iguales para todos?</div>
-      <p>Anna personaliza el saludo con el nombre y a veces incluye algún detalle especial (color favorito, mascota). Las cartas evolucionan mes a mes.</p>
+      <p style="margin-top: 10px;">Anna personaliza el saludo con el nombre y a veces incluye algún detalle especial (color favorito, mascota). Las cartas evolucionan mes a mes.</p>
     </div>
     <div class="faq-item">
       <div class="faq-question"><i class="far fa-smile"></i> ¿Anna existe de verdad?</div>
-      <p>Es un personaje inspirado en "Mister God, This Is Anna", pero su voz está construida con amor para sonar auténtica. ¡Los chicos establecen un vínculo real!</p>
+      <p style="margin-top: 10px;">Es un personaje inspirado en un libro: "Mister God, This Is Anna", pero su voz está construida con amor para sonar auténtica. ¡Los chicos establecen un vínculo real!</p>
     </div>
     <div class="faq-item">
       <div class="faq-question"><i class="fas fa-gift"></i> ¿Puedo regalar una suscripción?</div>
-      <p>¡Claro! Al finalizar la compra indicás que es un regalo y podemos incluir un mensaje especial en el primer envío.</p>
+      <p style="margin-top: 10px;">¡Claro! En el formulario indicás que es un regalo y podemos incluir un mensaje especial en el primer envío.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question"><i class="fas fa-credit-card"></i> ¿Es seguro pagar con MercadoPago?</div>
+      <p style="margin-top: 10px;">Sí, MercadoPago es una plataforma de pagos líder en América Latina. No almacenamos datos de tu tarjeta.</p>
     </div>
   </div>
 </section>
 
 <!-- Testimonios -->
-<section class="bg-soft">
+<section class="bg-lightblue">
   <div class="container">
     <h2>El boca a boca de las familias</h2>
     <div class="card-grid">
@@ -540,26 +731,25 @@
 <!-- Footer -->
 <footer>
   <div class="container text-center">
-    <div style="font-family:'Caveat', cursive; font-size:2.4rem; color:#5e3f3b;">Cartas de Anna</div>
-    <p>Biblia del personaje · Correspondencia para pequeños exploradores</p>
-    <div class="footer-links">
-      <a href="#"><i class="far fa-envelope"></i> hola@cartasdeanna.com</a>
-      <a href="#"><i class="fab fa-instagram"></i> @cartasdeanna</a>
-      <a href="#">Política de privacidad</a>
+    <div style="font-family:'Caveat', cursive; font-size:2.8rem; font-weight:700; color:#5e3f3b;">Cartas de Anna</div>
+    <p style="letter-spacing: 0.5px;">Correspondencia para pequeños exploradores</p>
+    <div class="footer-links"
+      <a href="#"><i class="fab fa-instagram"></i> @lascartasdeanna</a>
+   <!--   <a href="#">Política de privacidad</a>
       <a href="#">Términos</a>
-      <a href="#">Contacto</a>
+      <a href="#">Contacto</a>-->
     </div>
-    <p style="margin-top: 25px; opacity: 0.8;">📍 Buenos Aires, Argentina · Hecho con 🩵 y muchas preguntas</p>
-    <p style="font-family:'Caveat', cursive; font-size:1.5rem; margin-top:15px;">Con cariño, Anna 🐈 (y Fideo, que duerme en el cuaderno)</p>
+    <p style="margin-top: 30px; opacity: 0.9;">📍 Buenos Aires, Argentina · Hecho con 🩵 y muchas preguntas</p>
+    <p style="font-family:'Caveat', cursive; font-size:1.8rem; margin-top:20px;">Con cariño, Anna 🐈 (y Fideo, que duerme en el cuaderno)</p>
   </div>
 </footer>
 
-<!-- Pequeño script para suavizar enlaces internos -->
 <script>
+  // Suavizado de enlaces internos (excepto los que van al formulario externo)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      if (href !== "#" && href !== "") {
+      if (href !== "#" && href !== "" && !this.classList.contains('btn-form') && this.id !== 'btnFormulario') {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) target.scrollIntoView({ behavior: 'smooth' });
@@ -569,4 +759,4 @@
 </script>
 
 </body>
-            </html>
+    </html>
