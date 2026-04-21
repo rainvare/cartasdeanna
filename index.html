@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Cartas de Anna · Correspondencia para los más pequeños</title>
+  <!-- Fuentes: Manuscrita amable + Sans-serif limpia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fefaf5;  /* crema cálido */
+      color: #3a2c2b;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #7f4f4a;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #7f4f4a;
+      margin-bottom: 1.2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2:after {
+      content: "🐈";
+      font-size: 1.8rem;
+      margin-left: 8px;
+      opacity: 0.7;
+    }
+
+    h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.9rem;
+      color: #8b5e5a;
+      margin-bottom: 0.75rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header / Hero */
+    .hero {
+      padding: 60px 0 40px;
+      background: linear-gradient(135deg, #f9ede4 0%, #fefaf5 100%);
+      border-bottom: 2px dashed #e0c9c0;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 2;
+      min-width: 280px;
+    }
+
+    .hero-image {
+      flex: 1.5;
+      min-width: 240px;
+      text-align: center;
+    }
+
+    .hero-image .placeholder-illustration {
+      background: #e8d9d0;
+      border-radius: 50% 30% 50% 30% / 40% 50% 40% 50%;
+      padding: 30px 20px 20px;
+      box-shadow: 0 15px 25px rgba(120, 70, 60, 0.1);
+      border: 3px solid #fff;
+    }
+
+    .hero-image i {
+      font-size: 6rem;
+      color: #b0857c;
+      margin-bottom: 5px;
+    }
+
+    .hero-image p {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: #5e3f3b;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin: 20px 0 28px;
+      color: #4e3b37;
+      border-left: 5px solid #c9a79c;
+      padding-left: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #c27a70;
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      box-shadow: 0 8px 16px rgba(150, 90, 70, 0.15);
+      transition: all 0.2s ease;
+      border: 2px solid #f1ddd6;
+      font-family: 'Quicksand', sans-serif;
+      letter-spacing: 0.3px;
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    .btn:hover {
+      background-color: #a86358;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px rgba(150, 90, 70, 0.2);
+    }
+
+    /* Secciones generales */
+    section {
+      padding: 70px 0;
+    }
+
+    .bg-soft {
+      background-color: #f7efe9;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 24px;
+      border-radius: 40px 20px 40px 20px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+      border: 1px solid #f0dfd7;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+      border-color: #dbb9ae;
+    }
+
+    .card i {
+      font-size: 2.4rem;
+      color: #b07d70;
+      margin-bottom: 20px;
+    }
+
+    .card h4 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #6b4943;
+    }
+
+    /* Pasos */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    .step {
+      background: white;
+      border-radius: 50px 20px 50px 20px;
+      padding: 25px 20px;
+      flex: 1 1 160px;
+      text-align: center;
+      border-bottom: 5px solid #d9b2a5;
+    }
+
+    .step-number {
+      font-family: 'Caveat', cursive;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #c27a70;
+      line-height: 1;
+    }
+
+    /* Cita ejemplo */
+    .quote-block {
+      background: #fff5ef;
+      padding: 40px 30px;
+      border-radius: 60px 20px 60px 20px;
+      margin: 40px 0;
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #4d3530;
+      box-shadow: inset 0 0 0 2px #fbe9e1, 0 10px 15px -5px rgba(0,0,0,0.05);
+      border-left: 8px solid #c27a70;
+    }
+
+    .quote-block i {
+      color: #a17267;
+      margin-right: 8px;
+    }
+
+    /* Planes */
+    .planes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .plan {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 40px 20px 40px 20px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      box-shadow: 0 8px 20px rgba(150, 100, 80, 0.05);
+      border: 1px solid #edd9cf;
+      text-align: center;
+    }
+
+    .plan h4 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #6e4a42;
+    }
+
+    .plan .price {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #8b5e56;
+      margin: 15px 0;
+    }
+
+    .plan .btn-small {
+      background: #c27a70;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 40px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: white;
+      margin-bottom: 16px;
+      padding: 20px 25px;
+      border-radius: 30px 10px 30px 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+      border: 1px solid #ecdcd3;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #5b3e39;
+    }
+
+    .faq-question i {
+      color: #b17b6e;
+      font-size: 1.3rem;
+    }
+
+    /* Testimonios */
+    .testimonio {
+      background: white;
+      padding: 25px;
+      border-radius: 30px 10px 30px 10px;
+      font-style: italic;
+      border-bottom: 4px solid #e4c6bb;
+    }
+
+    /* Footer */
+    footer {
+      background: #e7d7cf;
+      padding: 40px 0 25px;
+      color: #3b2c28;
+      border-top: 2px dashed #bb9b90;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .footer-links a {
+      color: #4d3530;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .handwrite {
+      font-family: 'Caveat', cursive;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      h2 {
+        font-size: 2.2rem;
+      }
+      .hero-grid {
+        flex-direction: column-reverse;
+      }
+      .hero-image .placeholder-illustration {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1>Una carta de una amiga<br>que vive en Buenos Aires.</h1>
+      <div class="subtitle">
+        Con preguntas que despiertan el mundo.<br>
+        Y un gato que duerme sobre el cuaderno.
+      </div>
+      <p style="font-size:1.2rem; margin-bottom: 30px; max-width: 550px;">
+        Cada mes, tu hijo o hija recibe una carta escrita a mano por Anna, una nena de 6 años que está aprendiendo a leer. No enseña, no corrige. Solo comparte lo que descubre y pregunta lo que siente. Y espera respuesta.
+      </p>
+      <a href="#planes" class="btn"><i class="fas fa-envelope-open-text"></i> Quiero conocer a Anna →</a>
+    </div>
+    <div class="hero-image">
+      <div class="placeholder-illustration">
+        <i class="fas fa-cat"></i>
+        <i class="fas fa-feather-alt" style="font-size:2.5rem; margin:0 8px;"></i>
+        <i class="fas fa-leaf"></i>
+        <p>Anna, 6 años<br>Palermo, Bs. As.</p>
+        <div style="font-size:1rem; margin-top:5px;">✉️ Fideo duerme en el cuaderno</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ¿Qué es Cartas de Anna? -->
+<section>
+  <div class="container">
+    <h2>¿Qué es Cartas de Anna?</h2>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+      <div style="flex:2; min-width: 260px;">
+        <p style="font-size:1.2rem; margin-bottom: 20px;">Cartas de Anna es un envío postal mensual para niños y niñas de 4 a 8 años. No es un libro, no es una app, no es una tarea escolar. <strong>Es una amistad por carta.</strong></p>
+        <p>Cada mes llega un sobre con una carta manuscrita de Anna. Adentro hay preguntas, descubrimientos diminutos y una invitación a responder. Porque Anna cree que las palabras escritas viajan.</p>
+        <ul style="margin-top: 25px; list-style: none;">
+          <li style="margin-bottom: 12px;"><i class="fas fa-pencil-alt" style="color:#b07d70; width: 24px;"></i> Carta manuscrita (impresa con letra realista)</li>
+          <li style="margin-bottom: 12px;"><i class="fas fa-seedling" style="color:#b07d70;"></i> Un detalle del mundo de Anna (flor seca, dibujo)</li>
+          <li style="margin-bottom: 12px;"><i class="fas fa-question-circle" style="color:#b07d70;"></i> Una pregunta abierta para responder o dibujar</li>
+          <li style="margin-bottom: 12px;"><i class="fas fa-user-check" style="color:#b07d70;"></i> Sobre personalizado con el nombre</li>
+        </ul>
+      </div>
+      <div style="flex:1; background: #f9ede4; border-radius: 50px 20px; padding: 30px 20px; text-align: center;">
+        <i class="fas fa-mail-bulk" style="font-size:3.5rem; color:#b07d70;"></i>
+        <p style="font-family:'Caveat', cursive; font-size:1.8rem; margin-top: 15px;">"Una carta con tu nombre esperándote en el buzón"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ¿Cómo funciona? -->
+<section class="bg-soft">
+  <div class="container">
+    <h2>¿Cómo funciona?</h2>
+    <div class="steps">
+      <div class="step"><span class="step-number">1</span> <h4>Elegís el plan</h4> Mensual, trimestral o anual.</div>
+      <div class="step"><span class="step-number">2</span> <h4>Contás el nombre</h4> y algo que le guste (para que Anna lo sepa).</div>
+      <div class="step"><span class="step-number">3</span> <h4>Anna escribe</h4> la primera carta y la envía a tu casa.</div>
+      <div class="step"><span class="step-number">4</span> <h4>Tu pequeño lee</h4> (o le leen) y puede responder con dibujos.</div>
+      <div class="step"><span class="step-number">5</span> <h4>Al mes siguiente</h4> llega otra carta, y la amistad crece.</div>
+    </div>
+    <p class="text-center" style="font-size:0.95rem;"><i class="far fa-heart"></i> Las respuestas nutren las futuras cartas. Anna siempre siente que la leen de verdad.</p>
+  </div>
+</section>
+
+<!-- ¿Por qué Cartas de Anna? -->
+<section>
+  <div class="container">
+    <h2>¿Por qué Cartas de Anna?</h2>
+    <div class="card-grid">
+      <div class="card"><i class="fas fa-child"></i><h4>Para los chicos</h4> Recibir una carta con su nombre es mágico. Leer se vuelve un momento compartido, sin pantallas.</div>
+      <div class="card"><i class="fas fa-users"></i><h4>Para las familias</h4> Un puente para hablar de emociones, miedos y descubrimientos. Un ritual mensual que se espera con ilusión.</div>
+      <div class="card"><i class="fas fa-star"></i><h4>Lectura con sentido</h4> Anna no corrige: pregunta y se maravilla. Los niños se sienten vistos.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Fragmento de ejemplo -->
+<section class="bg-soft">
+  <div class="container">
+    <h2>Una probadita de la voz de Anna</h2>
+    <div class="quote-block">
+      <i class="fas fa-quote-left"></i> 
+      Son las cuatro de la tarde y hay un olor a lluvia que todavía no llegó. Fideo está en la ventana mirando el cielo como si supiera algo que yo no sé. La abuela Beatriz dice que los gatos sienten la lluvia antes que los humanos. Yo lo creo. Vos, ¿le creés a los gatos?
+      <i class="fas fa-quote-right"></i>
+    </div>
+    <p class="text-center" style="font-family:'Caveat', cursive; font-size:1.4rem;">— Anna 🐈</p>
+  </div>
+</section>
+
+<!-- Conocé a Anna -->
+<section>
+  <div class="container" style="max-width: 900px;">
+    <h2>Conocé a Anna (sin spoilers)</h2>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
+      <div style="flex:1; min-width:200px;">
+        <i class="fas fa-girl" style="font-size:4rem; color:#b07d70;"></i>
+        <i class="fas fa-cat" style="font-size:3rem; color:#b07d70; margin-left:15px;"></i>
+      </div>
+      <div style="flex:3;">
+        <p>Anna tiene 6 años, el pelo castaño siempre revuelto y ojos que ven lo que otros no miraron. Vive en Palermo con su abuela Beatriz y su gato Fideo. Está aprendiendo a leer y escribir, y cada letra nueva es una llave. No es maestra, no da consejos. Es una compañera de aventuras que pregunta y abraza con palabras.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Planes y precios -->
+<section id="planes" class="bg-soft">
+  <div class="container">
+    <h2>Planes y precios</h2>
+    <div class="planes-grid">
+      <div class="plan">
+        <h4>Mensual</h4>
+        <p>1 carta por mes</p>
+        <div class="price">$XXXX</div>
+        <p>Renovable · envío incluido</p>
+        <a href="#" class="btn-small">Suscribirme →</a>
+      </div>
+      <div class="plan">
+        <h4>Trimestral</h4>
+        <p>3 cartas (una por mes)</p>
+        <div class="price">$XXXX</div>
+        <p>Pago único</p>
+        <a href="#" class="btn-small">Elegir trimestre →</a>
+      </div>
+      <div class="plan">
+        <h4>Anual</h4>
+        <p>12 cartas + regalo sorpresa</p>
+        <div class="price">$XXXX</div>
+        <p>Pago único · mejor valor</p>
+        <a href="#" class="btn-small">Regalar un año →</a>
+      </div>
+    </div>
+    <p class="text-center" style="margin-top:25px;">✉️ Envío incluido a todo el país. Las cartas salen los primeros días del mes.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <h2>Preguntas que quizás tengas</h2>
+    <div class="faq-item">
+      <div class="faq-question"><i class="far fa-calendar-alt"></i> ¿A partir de qué edad se recomienda?</div>
+      <p>Ideal para 4 a 8 años. Si aún no leen solos, se lee en familia. Si ya leen, es una práctica emocionante.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question"><i class="far fa-copy"></i> ¿Las cartas son iguales para todos?</div>
+      <p>Anna personaliza el saludo con el nombre y a veces incluye algún detalle especial (color favorito, mascota). Las cartas evolucionan mes a mes.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question"><i class="far fa-smile"></i> ¿Anna existe de verdad?</div>
+      <p>Es un personaje inspirado en "Mister God, This Is Anna", pero su voz está construida con amor para sonar auténtica. ¡Los chicos establecen un vínculo real!</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question"><i class="fas fa-gift"></i> ¿Puedo regalar una suscripción?</div>
+      <p>¡Claro! Al finalizar la compra indicás que es un regalo y podemos incluir un mensaje especial en el primer envío.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonios -->
+<section class="bg-soft">
+  <div class="container">
+    <h2>El boca a boca de las familias</h2>
+    <div class="card-grid">
+      <div class="testimonio">“Mi hija de 6 años espera la carta de Anna como si fuera su cumpleaños. La leemos juntas en la cama y después ella le ‘responde’ con un dibujo. Es nuestro momento favorito del mes.” <br>— <strong>Mariana, mamá de Julia (7)</strong></div>
+      <div class="testimonio">“Lauti no quería leer en voz alta. Después de la carta donde Anna cuenta que a ella también le da vergüenza, algo cambió. Se animó. Gracias por tanto.” <br>— <strong>Pablo, papá de Lautaro (6)</strong></div>
+      <div class="testimonio">“Recibir una carta con su nombre fue mágico. Ahora quiere escribirle a Anna todas las semanas.” <br>— <strong>Valeria, mamá de Mateo (5)</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <div style="font-family:'Caveat', cursive; font-size:2.4rem; color:#5e3f3b;">Cartas de Anna</div>
+    <p>Biblia del personaje · Correspondencia para pequeños exploradores</p>
+    <div class="footer-links">
+      <a href="#"><i class="far fa-envelope"></i> hola@cartasdeanna.com</a>
+      <a href="#"><i class="fab fa-instagram"></i> @cartasdeanna</a>
+      <a href="#">Política de privacidad</a>
+      <a href="#">Términos</a>
+      <a href="#">Contacto</a>
+    </div>
+    <p style="margin-top: 25px; opacity: 0.8;">📍 Buenos Aires, Argentina · Hecho con 🩵 y muchas preguntas</p>
+    <p style="font-family:'Caveat', cursive; font-size:1.5rem; margin-top:15px;">Con cariño, Anna 🐈 (y Fideo, que duerme en el cuaderno)</p>
+  </div>
+</footer>
+
+<!-- Pequeño script para suavizar enlaces internos -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== "#" && href !== "") {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+            </html>
